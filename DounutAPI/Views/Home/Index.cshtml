@@ -1,0 +1,11 @@
+﻿<h1>Donuts make you go nuts</h1>
+@if (ViewBag.Donut != null)
+{
+    foreach(var dounuts in ViewBag.Donut)
+    {
+        <ul>
+            <a href="/Home/DountTime?id=@dounuts["id"]">@dounuts["name"]</a>
+        </ul>
+    }
+}
+    
