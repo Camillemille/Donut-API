@@ -38,7 +38,7 @@ namespace DounutAPI.Controllers
 
         public ActionResult DountTime(string id)
         {
-            HttpWebRequest request = WebRequest.CreateHttp(" https://grandcircusco.github.io/demo-apis/donuts/"+id+".json");
+            HttpWebRequest request = WebRequest.CreateHttp($"https://grandcircusco.github.io/demo-apis/donuts/{id}.json");
             request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse(); //Geeting a response from the server 
 
@@ -49,7 +49,7 @@ namespace DounutAPI.Controllers
                 JObject parser = JObject.Parse(output);
 
 
-                ViewBag.Donut = parser["data"];
+                ViewBag.Donut = parser;
                 reader.Close();
                 response.Close();
             }
